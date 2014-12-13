@@ -2,6 +2,8 @@
 
 This is a mercury router component from Raynos : https://gist.github.com/adbf7951bee3fdfe1a65
 
+Mercury is a FRP JS framework based on the idea of tiny modules: https://github.com/Raynos/mercury
+
 ## Install
 
 ```
