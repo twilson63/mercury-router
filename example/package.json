@@ -1,0 +1,18 @@
+{
+  "name": "example",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "w3 --pushstate"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "mercury": "^10.1.0"
+  },
+  "devDependencies": {
+    "w3": "^0.6.0"
+  }
+}
