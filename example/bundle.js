@@ -5,17 +5,19 @@ var RouterComponent = require('../');
 var anchor = RouterComponent.anchor;
 var Router = RouterComponent; 
 
-function State() {
-  var state = mercury.struct({
+function App() {
+  var state = mercury.state({
+    title: mercury.value('Router Example'),
     route: Router()
   });
-  return { state: state };
+  return state;
 }
     
-mercury.app(document.body, State().state, render);
+mercury.app(document.body, App(), render);
       
 function render(state) {
   return h('div', [
+    h('h1', [state.title]),
     menu(),
     RouterComponent.render(state, {
       '/': function() {
@@ -25,7 +27,6 @@ function render(state) {
         return h('h1', ['Animals']);
       },
       '/animals/:id': function(params) {
-        console.log('foo');
         return h('h1', ['Animals ' + params.id]);
       }
     })

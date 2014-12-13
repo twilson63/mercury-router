@@ -6,6 +6,7 @@ var Router = RouterComponent;
 
 function App() {
   var state = mercury.state({
+    title: mercury.value('Router Example'),
     route: Router()
   });
   return state;
@@ -15,6 +16,7 @@ mercury.app(document.body, App(), render);
       
 function render(state) {
   return h('div', [
+    h('h1', [state.title]),
     menu(),
     RouterComponent.render(state, {
       '/': function() {
