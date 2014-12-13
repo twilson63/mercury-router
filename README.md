@@ -1,6 +1,6 @@
 # Mercury RouterComponent
 
-This is a mercury router component from Raynos : https://gist.github.com/adbf7951bee3fdfe1a65.git
+This is a mercury router component from Raynos : https://gist.github.com/adbf7951bee3fdfe1a65
 
 ## Install
 
