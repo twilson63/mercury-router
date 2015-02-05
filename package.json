@@ -15,7 +15,8 @@
   "dependencies": {
     "geval": "^2.1.1",
     "global": "^4.3.0",
-    "mercury": "^11.0.0",
-    "route-map": "^0.1.0"
+    "observ": "^0.2.0",
+    "route-map": "^0.1.0",
+    "virtual-hyperscript": "^4.6.0"
   }
 }
