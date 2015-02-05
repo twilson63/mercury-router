@@ -6,11 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://gist.github.com/adbf7951bee3fdfe1a65.git"
-  },
-  "author": "",
+  "author": "@Raynos",
   "license": "MIT",
   "dependencies": {
     "geval": "^2.1.1",
@@ -18,5 +14,22 @@
     "observ": "^0.2.0",
     "route-map": "^0.1.0",
     "virtual-hyperscript": "^4.6.0"
-  }
+  },
+  "directories": {
+    "example": "example",
+    "test": "test"
+  },
+  "devDependencies": {},
+  "keywords": [
+    "mercury",
+    "router"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/twilson63/mercury-router.git"
+  },
+  "bugs": {
+    "url": "https://github.com/twilson63/mercury-router/issues"
+  },
+  "homepage": "https://github.com/twilson63/mercury-router"
 }
