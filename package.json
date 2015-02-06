@@ -4,7 +4,7 @@
   "description": "This is a mercury router component from Raynos : https://gist.github.com/adbf7951bee3fdfe1a65.git",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "tap test"
   },
   "author": "@Raynos",
   "license": "MIT",
@@ -19,7 +19,9 @@
     "example": "example",
     "test": "test"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "tap": "^0.5.0"
+  },
   "keywords": [
     "mercury",
     "router"
