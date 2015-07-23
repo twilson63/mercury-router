@@ -4,7 +4,8 @@
   "description": "This is a mercury router component from Raynos : https://gist.github.com/adbf7951bee3fdfe1a65.git",
   "main": "index.js",
   "scripts": {
-    "test": "NODE_ENV=test node test/test | tap-spec"
+    "test": "NODE_ENV=test node test/test | tap-spec",
+    "lint": "eslint index.js lib test"
   },
   "author": "@Raynos",
   "license": "MIT",
@@ -17,7 +18,8 @@
   },
   "devDependencies": {
     "tape": "^4.0.0",
-    "tap-spec": "^4.0.2"
+    "tap-spec": "^4.0.2",
+    "eslint": "^0.24.0"
   },
   "directories": {
     "example": "example",
