@@ -11,5 +11,5 @@ function RouterComponent() {
 }
 
 function Render(state, opts) {
-  return routeView(opts, state );
+  return routeView(opts, state);
 }

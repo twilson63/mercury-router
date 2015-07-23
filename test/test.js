@@ -1,24 +1,14 @@
 'use strict';
 
-var test = require('tape');
-var window = require('global/window')
-var document = require('global/document');
+global.test = require('tape');
 
-document.location = {
-  pathname: "/"
-}
-
-window.addEventListener = function polyAddEventListneer() {
+global.window = require('global/window');
+global.window.addEventListener = function polyAddEventListneer() {
   return false;
 }
 
-var router = require('../index.js');
+global.document = require('global/document');
+global.document.location = { href: "/" };
 
-test('[core] router init', function test(t) {
-  var state = router();
-
-  t.ok(router.render, 'has render function');
-  t.ok(router.anchor, 'has anchor function');
-  t.ok(state, 'state init');
-  t.end()
-});
+require('./index_test.js');
+require('./router_test.js');
