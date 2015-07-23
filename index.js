@@ -7,7 +7,7 @@ RouterComponent.render = Render;
 module.exports = RouterComponent;
 
 function RouterComponent() {
- return Router().state; 
+ return Router().state;
 }
 
 function Render(state, opts) {
