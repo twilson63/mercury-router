@@ -4,6 +4,8 @@ This is a mercury router component from Raynos : https://gist.github.com/adbf795
 
 Mercury is a FRP JS framework based on the idea of tiny modules: https://github.com/Raynos/mercury
 
+[![Build Status](https://travis-ci.org/twilson63/mercury-router.svg?branch=master)](https://travis-ci.org/twilson63/mercury-router)
+
 ## Install
 
 ```
