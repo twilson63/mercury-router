@@ -12,6 +12,13 @@ Mercury is a FRP JS framework based on the idea of tiny modules: https://github.
 npm install mercury-router
 ```
 
+## API
+
+Mecury Router looks for two state attributes:
+
+* base: This attribute defines the base route of the router
+* route: This attribute defines the current/default route
+
 ## Usage
 
 ``` js
@@ -23,6 +30,7 @@ var Router = RouterComponent;
 
 function App() {
   var state = mercury.state({
+    base: '/',
     route: Router()
   });
   return state;
@@ -52,7 +60,7 @@ function render(state) {
 ## Credits
 
 Created By [@Raynos](https://github.com/Raynos)
-
+Tests By [@nikuda](https://github.com/nikuda)
 
 
 
