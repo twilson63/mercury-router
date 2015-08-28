@@ -57,6 +57,50 @@ function render(state) {
 
 ```
 
+``` js
+  var mercury = require('mercury');
+  var h = require('mercury').h;
+  var anchor = require('mercury-route/anchor');
+  var routeView = require('mercury-route/route-view');
+  var Router = require('mercury-route/router');
+
+  function State() {
+    var state = mercury.struct({
+      route: Router()
+    });
+
+    return { state: state }
+  }
+
+  mercury.app(document.body, State().state, render);
+
+  function render(state) {
+    return h('div', [
+      menu(),
+      routeView({
+        '/': renderHome,
+        '/animals': renderAnimals,
+        '/animals/:id': renderAnimalItem
+      }, { route: state.route })
+    ])
+  }
+
+  function menu() {
+    return h('ul', [
+      h('li', [
+        anchor({
+          href: '/'
+        }, 'Home')
+      ]),
+      h('li', [
+        anchor({
+          href: '/animals'
+        }, 'Animals')
+      ])
+    ])
+  }
+```
+
 ## Credits
 
 Created By [@Raynos](https://github.com/Raynos)
