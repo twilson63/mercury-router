@@ -26,7 +26,7 @@ var mercury = require('mercury');
 var h = require('mercury').h;
 var RouterComponent = require('mercury-router');
 var anchor = RouterComponent.anchor;
-var Router = RouterComponent; 
+var Router = RouterComponent;
 
 function App() {
   var state = mercury.state({
@@ -35,9 +35,9 @@ function App() {
   });
   return state;
 }
-    
+
 mercury.app(document.body, App(), render);
-      
+
 function render(state) {
   return h('div', [
     menu(),
@@ -62,7 +62,9 @@ function render(state) {
 Created By [@Raynos](https://github.com/Raynos)
 Tests By [@nikuda](https://github.com/nikuda)
 
+## LICENSE
 
+see LICENSE
 
 
 
