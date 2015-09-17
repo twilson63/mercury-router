@@ -1,6 +1,6 @@
 {
   "name": "mercury-router",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "This is a mercury router component from Raynos : https://gist.github.com/adbf7951bee3fdfe1a65.git",
   "main": "index.js",
   "scripts": {
