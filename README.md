@@ -22,39 +22,47 @@ Mecury Router looks for two state attributes:
 ## Usage
 
 ``` js
-var mercury = require('mercury');
-var h = require('mercury').h;
-var RouterComponent = require('mercury-router');
-var anchor = RouterComponent.anchor;
-var Router = RouterComponent;
+  var mercury = require('mercury');
+  var h = require('mercury').h;
+  var anchor = require('mercury-route/anchor');
+  var routeView = require('mercury-route/route-view');
+  var Router = require('mercury-route/router');
 
-function App() {
-  var state = mercury.state({
-    base: '/',
-    route: Router()
-  });
-  return state;
-}
+  function App() {
+    var state = mercury.struct({
+      route: Router()
+    });
 
-mercury.app(document.body, App(), render);
+    return state;
+  }
 
-function render(state) {
-  return h('div', [
-    menu(),
-    RouterComponent.render(state, {
-      '/': function() {
-        return h('h1', ['Home']);
-      },
-      '/animals': function() {
-        return h('h1', ['Animals']);
-      },
-      '/animals/:id': function(params) {
-        return h('h1', ['Animals ' + params.id]);
-      }
-    })
-  ]);
-}
+  mercury.app(document.body, App(), render);
 
+  function render(state) {
+    return h('div', [
+      menu(),
+      routeView({
+        '/': renderHome,
+        '/animals': renderAnimals,
+        '/animals/:id': renderAnimalItem
+      }, { route: state.route })
+    ])
+  }
+
+  function menu() {
+    return h('ul', [
+      h('li', [
+        anchor({
+          href: '/'
+        }, 'Home')
+      ]),
+      h('li', [
+        anchor({
+          href: '/animals'
+        }, 'Animals')
+      ])
+    ])
+  }
 ```
 
 ## Credits
@@ -65,6 +73,3 @@ Tests By [@nikuda](https://github.com/nikuda)
 ## LICENSE
 
 see LICENSE
-
-
-
