@@ -1,7 +1,7 @@
 'use strict';
 
 var h = require('virtual-dom/virtual-hyperscript');
-var clickEvent = require('./click-event.js');
+var clickEvent = require('./lib/click-event.js');
 
 var routeAtom = require('./router.js').atom;
 

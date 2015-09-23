@@ -9,7 +9,7 @@ document.location = { href: '/articles?page=25' };
 
 var router = require('../index');
 var anchor = router.anchor;
-var atom = require('../lib/router').atom;
+var atom = require('../router').atom;
 
 
 test('init', function test_init(t) {
