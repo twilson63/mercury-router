@@ -1,7 +1,7 @@
 'use strict';
 
-var router = require('./lib/router');
-var routeView = require('./lib/route-view');
+var router = require('./router');
+var routeView = require('./route-view');
 
 function RouterComponent() {
     return router().state;
@@ -11,7 +11,7 @@ function Render(state, opts) {
     return routeView(opts, state);
 }
 
-RouterComponent.anchor = require('./lib/route-anchor');
+RouterComponent.anchor = require('./anchor');
 RouterComponent.render = Render;
 
 module.exports = RouterComponent;

@@ -24,9 +24,9 @@ Mecury Router looks for two state attributes:
 ``` js
   var mercury = require('mercury');
   var h = require('mercury').h;
-  var anchor = require('mercury-route/anchor');
-  var routeView = require('mercury-route/route-view');
-  var Router = require('mercury-route/router');
+  var anchor = require('mercury-router/anchor');
+  var routeView = require('mercury-router/route-view');
+  var Router = require('mercury-router/router');
 
   function App() {
     var state = mercury.struct({
