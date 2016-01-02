@@ -31,20 +31,22 @@ function router(channels_map, args) {
             return;
         }
 
-        if (args.base) {
-            channels_map = Object.keys(channels_map)
-                .reduce(function applyBase(acc, str) {
-                    acc[args.base + str] = channels_map[str];
-                    return acc;
-                }, {});
-        }
+        if(channels_map){
+          if (args && args.base) {
+              channels_map = Object.keys(channels_map)
+                  .reduce(function applyBase(acc, str) {
+                      acc[args.base + str] = channels_map[str];
+                      return acc;
+                  }, {});
+          }
 
-        var match = routeMap(channels_map);
+          var match = routeMap(channels_map);
 
-        var res = match(args.route);
-        if (res) {
-          res.params.url = res.url;
-          res.fn(res.params);
+          var res = match(args.route);
+          if (res) {
+            res.params.url = res.url;
+            res.fn(res.params);
+          }
         }
 
 
