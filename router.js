@@ -8,7 +8,7 @@ var document = require('global/document');
 
 var atom = router.atom = value(String(document.location.href));
 
-function router() {
+function router(channels_map) {
     var inPopState = false;
     var popstates = popstate();
 
