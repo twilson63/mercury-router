@@ -42,7 +42,8 @@ function router(channels_map, args) {
 
           var match = routeMap(channels_map);
 
-          var res = match(args.route);
+          var res = match(uri);
+
           if (res) {
             res.params.url = res.url;
             res.fn(res.params);
