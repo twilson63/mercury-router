@@ -4,11 +4,14 @@ var value = require('observ');
 var source = require('geval/source');
 var window = require('global/window');
 var document = require('global/document');
+var routeMap = require('route-map');
 
 
 var atom = router.atom = value(String(document.location.href));
 
-function router() {
+function router(channels_map, args) {
+    
+    
     var inPopState = false;
     var popstates = popstate();
 
@@ -27,6 +30,26 @@ function router() {
             inPopState = false;
             return;
         }
+
+        if(channels_map){
+          if (args && args.base) {
+              channels_map = Object.keys(channels_map)
+                  .reduce(function applyBase(acc, str) {
+                      acc[args.base + str] = channels_map[str];
+                      return acc;
+                  }, {});
+          }
+
+          var match = routeMap(channels_map);
+
+          var res = match(uri);
+
+          if (res) {
+            res.params.url = res.url;
+            res.fn(res.params);
+          }
+        }
+
 
         pushHistoryState(uri);
     }
