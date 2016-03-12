@@ -10,7 +10,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "mercury": "^10.1.0"
+    "mercury": "^14.1.0"
   },
   "devDependencies": {
     "w3": "^0.6.0"
