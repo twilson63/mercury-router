@@ -11,6 +11,7 @@ function Render(state, opts) {
     return routeView(opts, state);
 }
 
+RouterComponent.go = router.atom.set;
 RouterComponent.anchor = require('./anchor');
 RouterComponent.render = Render;
 

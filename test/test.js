@@ -4,7 +4,10 @@ var test = require('tape');
 var window = require('global/window');
 var document = require('global/document');
 
-window.addEventListener = function polyAddEventListneer() { return false; };
+window.history = {};
+window.history.pushState = function polyPushState() {};
+
+window.addEventListener = function polyAddEventListneer() {};
 document.location = { href: '/articles?page=25' };
 
 var router = require('../index');
@@ -17,14 +20,13 @@ test('init', function test_init(t) {
 
     t.ok(router.render, 'has render function');
     t.ok(router.anchor, 'has anchor function');
+    t.ok(router.go, 'has go function');
     t.ok(state, 'state init');
     t.end();
 });
 
 test('router', function test_router(t) {
-    t.equal(
-        atom(),
-        document.location.href,
+    t.equal(atom(), document.location.href,
         'router init with full url, including query string');
 
     t.end();
@@ -35,5 +37,14 @@ test('anchor', function test_anchor(t) {
     var a = anchor({href: link});
 
     t.equal(a.properties.href, link, 'renders full link in href attribute');
+    t.end();
+});
+
+test('go', function navigateTest(t) {
+    var state = router();
+    var link = '/articles?page=26';
+
+    router.go(link);
+    t.equal(state(), link, 'update route through go fn');
     t.end();
 });

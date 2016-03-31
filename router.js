@@ -10,8 +10,6 @@ var routeMap = require('route-map');
 var atom = router.atom = value(String(document.location.href));
 
 function router(channels_map, args) {
-    
-    
     var inPopState = false;
     var popstates = popstate();
 
