@@ -3,8 +3,8 @@
 var router = require('./router');
 var routeView = require('./route-view');
 
-function RouterComponent(channels_map) {
-    return router(channels_map).state;
+function RouterComponent() {
+    return router().state;
 }
 
 function Render(state, opts) {
