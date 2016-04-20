@@ -27,11 +27,10 @@ See [example](example/) for a minimal working implemenation.
 
 ## Credits
 
-Created by [@Raynos](https://github.com/Raynos) in
+* Created by [@Raynos](https://github.com/Raynos) in
 https://gist.github.com/adbf7951bee3fdfe1a65
+* Tests by [@nikuda](https://github.com/nikuda)
 
-Tests by [@nikuda](https://github.com/nikuda)
+## License
 
-## LICENSE
-
-see LICENSE
+See [LICENSE](LICENSE)
