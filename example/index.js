@@ -1,3 +1,5 @@
+'use strict';
+
 var mercury = require('mercury');
 var h = require('mercury').h;
 var router = require('../');

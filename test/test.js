@@ -10,9 +10,8 @@ window.history.pushState = function polyPushState() {};
 window.addEventListener = function polyAddEventListneer() {};
 document.location = { href: '/articles?page=25' };
 
-var router = require('../index');
-var anchor = router.anchor;
-var atom = require('../router').atom;
+var router = require('../index'); //eslint-disable-line
+var atom = require('../router').atom; //eslint-disable-line
 
 
 test('init', function test_init(t) {
@@ -34,7 +33,7 @@ test('router', function test_router(t) {
 
 test('anchor', function test_anchor(t) {
     var link = '/article/5';
-    var a = anchor({href: link});
+    var a = router.anchor({href: link});
 
     t.equal(a.properties.href, link, 'renders full link in href attribute');
     t.end();

@@ -5,6 +5,9 @@ var routeMap = require('route-map');
 module.exports = routeView;
 
 function routeView(defn, args) {
+    var match;
+    var res;
+
     if (args.base) {
         defn = Object.keys(defn)
             .reduce(function applyBase(acc, str) {
@@ -13,9 +16,9 @@ function routeView(defn, args) {
             }, {});
     }
 
-    var match = routeMap(defn);
+    match = routeMap(defn);
+    res = match(args.route);
 
-    var res = match(args.route);
     if (!res) {
         throw new Error('router: no match found');
     }
