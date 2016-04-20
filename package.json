@@ -4,7 +4,7 @@
   "description": "This is a mercury router component from Raynos : https://gist.github.com/adbf7951bee3fdfe1a65.git",
   "main": "index.js",
   "scripts": {
-    "test": "NODE_ENV=test node test/test | tap-spec",
+    "test": "npm run lint && NODE_ENV=test node test/test | tap-spec",
     "lint": "eslint lib test example/index.js *.js"
   },
   "author": "@Raynos",
