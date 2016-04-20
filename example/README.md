@@ -1,4 +1,4 @@
-# Mercury Router Example:
+# Mercury Router Example
 
 This example can be run:
 

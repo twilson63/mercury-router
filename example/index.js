@@ -1,24 +1,23 @@
 var mercury = require('mercury');
 var h = require('mercury').h;
-var RouterComponent = require('../');
-var anchor = RouterComponent.anchor;
-var Router = RouterComponent; 
+var router = require('../');
+var anchor = router.anchor;
 
 function App() {
   var state = mercury.state({
     title: mercury.value('Router Example'),
-    route: Router()
+    route: router()
   });
   return state;
 }
-    
+
 mercury.app(document.body, App(), render);
-      
+
 function render(state) {
   return h('div', [
     h('h1', [state.title]),
     menu(),
-    RouterComponent.render(state, {
+    router.render(state, {
       '/': function() {
         return h('h1', ['Home']);
       },
