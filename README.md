@@ -1,10 +1,7 @@
-# Mercury RouterComponent
+# Mercury Router [![Build Status](https://travis-ci.org/twilson63/mercury-router.svg?branch=master)](https://travis-ci.org/twilson63/mercury-router)
 
-This is a mercury router component from Raynos : https://gist.github.com/adbf7951bee3fdfe1a65
-
-Mercury is a FRP JS framework based on the idea of tiny modules: https://github.com/Raynos/mercury
-
-[![Build Status](https://travis-ci.org/twilson63/mercury-router.svg?branch=master)](https://travis-ci.org/twilson63/mercury-router)
+This is a router component for Mercury, a FRP JS framework based on the idea of
+tiny modules: https://github.com/Raynos/mercury
 
 ## Install
 
@@ -16,60 +13,24 @@ npm install mercury-router
 
 Mecury Router looks for two state attributes:
 
-* base: This attribute defines the base route of the router
-* route: This attribute defines the current/default route
+* `base`: This attribute defines the base route of the router
+* `route`: This attribute defines the current/default route
 
 ## Usage
 
-``` js
-  var mercury = require('mercury');
-  var h = require('mercury').h;
-  var anchor = require('mercury-router/anchor');
-  var routeView = require('mercury-router/route-view');
-  var Router = require('mercury-router');
+* `router()` - initialise mercury router state in app state
+* `router.render(routes:Object)` - route path/view mapping in app render
+* `router.anchor(attr:Object, VTree|String)` - navigate via `a` html element
+* `router.go(url:String)` - navigate to url directly
 
-  function App() {
-    var state = mercury.struct({
-      route: Router()
-    });
-
-    return state;
-  }
-
-  mercury.app(document.body, App(), render);
-
-  function render(state) {
-    return h('div', [
-      menu(),
-      routeView({
-        '/': renderHome,
-        '/animals': renderAnimals,
-        '/animals/:id': renderAnimalItem
-      }, { route: state.route })
-    ])
-  }
-
-  function menu() {
-    return h('ul', [
-      h('li', [
-        anchor({
-          href: '/'
-        }, 'Home')
-      ]),
-      h('li', [
-        anchor({
-          href: '/animals'
-        }, 'Animals')
-      ])
-    ])
-  }
-```
+See [example](example/) for a minimal working implemenation.
 
 ## Credits
 
-Created By [@Raynos](https://github.com/Raynos)
-Tests By [@nikuda](https://github.com/nikuda)
+* Created by [@Raynos](https://github.com/Raynos) in
+https://gist.github.com/adbf7951bee3fdfe1a65
+* Tests by [@nikuda](https://github.com/nikuda)
 
-## LICENSE
+## License
 
-see LICENSE
+See [LICENSE](LICENSE)

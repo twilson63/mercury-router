@@ -1,25 +1,25 @@
 {
   "name": "mercury-router",
-  "version": "1.4.0",
+  "version": "1.4.2",
   "description": "This is a mercury router component from Raynos : https://gist.github.com/adbf7951bee3fdfe1a65.git",
   "main": "index.js",
   "scripts": {
-    "test": "NODE_ENV=test node test/test | tap-spec",
-    "lint": "eslint index.js lib test"
+    "test": "npm run lint && NODE_ENV=test node test/test | tap-spec",
+    "lint": "eslint lib test example/index.js *.js"
   },
   "author": "@Raynos",
   "license": "MIT",
   "dependencies": {
-    "geval": "^2.1.1",
-    "global": "^4.3.0",
-    "observ": "^0.2.0",
+    "geval": "2.1.1",
+    "global": "4.3.0",
+    "observ": "0.2.0",
     "route-map": "azer/route-map#44982d8",
-    "virtual-dom": "^2.1.1"
+    "virtual-dom": "2.1.1"
   },
   "devDependencies": {
     "tape": "^4.0.0",
     "tap-spec": "^4.0.2",
-    "eslint": "^0.24.0"
+    "eslint": "^2.8.0"
   },
   "directories": {
     "example": "example",
