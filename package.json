@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "NODE_ENV=test node test/test | tap-spec",
-    "lint": "eslint lib test *.js"
+    "lint": "eslint lib test example/index.js *.js"
   },
   "author": "@Raynos",
   "license": "MIT",
