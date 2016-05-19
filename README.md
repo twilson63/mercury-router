@@ -19,7 +19,7 @@ Mecury Router looks for two state attributes:
 ## Usage
 
 * `router()` – initialise mercury router state in app state
-* `router.render(routes:Object)` – route path/view mapping in app render
+* `router.render(state:Object, routes:Object, fallback:Function)` – route path/view mapping in app render
 * `router.anchor(attributes:Object, children:VTree|String)` – navigate via `a` html element
 * `router.go(url:String)` – navigate to url directly
 

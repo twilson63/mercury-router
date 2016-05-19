@@ -7,8 +7,8 @@ function RouterComponent() {
     return router().state;
 }
 
-function Render(state, opts) {
-    return routeView(opts, state);
+function Render(state, opts, fallback) {
+    return routeView(opts, state, fallback);
 }
 
 RouterComponent.go = router.atom.set;

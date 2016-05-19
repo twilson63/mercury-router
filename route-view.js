@@ -4,7 +4,7 @@ var routeMap = require('route-map');
 
 module.exports = routeView;
 
-function routeView(defn, args) {
+function routeView(defn, args, fallback) {
     var match;
     var res;
 
@@ -20,6 +20,9 @@ function routeView(defn, args) {
     res = match(args.route);
 
     if (!res) {
+        if (fallback) {
+            return fallback();
+        }
         throw new Error('router: no match found');
     }
 
