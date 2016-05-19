@@ -28,6 +28,35 @@ test('router', function test_router(t) {
     t.equal(atom(), document.location.href,
         'router init with full url, including query string');
 
+    t.equal('articles', router.render({route: '/articles?page=25'}, {
+        '/': function home() {
+            return 'home';
+        },
+        '/articles': function articles() {
+            return 'articles'
+        }
+    }), 'renders matched route');
+
+    t.equal('fallback', router.render({route: '/books'}, {
+        '/': function home() {
+            return 'home';
+        },
+        '/articles': function articles() {
+            return 'articles'
+        }
+    }, function fallback() { return 'fallback' }), 'renders fallback route');
+
+    t.throws(function missingRoute() {
+        router.render({route: '/books'}, {
+            '/': function home() {
+                return 'home';
+            },
+            '/articles': function articles() {
+                return 'articles'
+            }
+        })
+    }, 'throws an error if no route matches');
+
     t.end();
 });
 
